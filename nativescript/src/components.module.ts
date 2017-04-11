@@ -20,7 +20,6 @@ import { routes } from './app/components/app.routes';
 
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
-import { AnalyticsModule } from './app/shared/analytics/analytics.module';
 import { MultilingualModule, translateLoaderFactory } from './app/shared/i18n/multilingual.module';
 import { SampleModule } from './app/shared/sample/sample.module';
 import { ConsoleService, ConsoleTarget, LogLevel } from "./app/shared/core/index";
@@ -34,7 +33,6 @@ import { ConsoleService, ConsoleTarget, LogLevel } from "./app/shared/core/index
     NativeScriptFormsModule,
     NativeScriptHttpModule,
     NativeScriptRouterModule,
-    AnalyticsModule,
     CoreModule,
     MultilingualModule.forRoot([{
       provide: TranslateLoader,
@@ -59,7 +57,6 @@ import { ConsoleService, ConsoleTarget, LogLevel } from "./app/shared/core/index
     NativeScriptRouterModule,
     MultilingualModule,
     AppComponent,
-    AnalyticsModule,
     CoreModule,
     SampleModule
   ]

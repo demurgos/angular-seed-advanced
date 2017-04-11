@@ -18,7 +18,6 @@ import { routes } from './app/components/app.routes';
 // feature modules
 import { CoreModule } from './app/shared/core/core.module';
 import { AppReducer } from './app/shared/ngrx/index';
-import { AnalyticsModule } from './app/shared/analytics/analytics.module';
 import { MultilingualModule, translateLoaderFactory } from './app/shared/i18n/multilingual.module';
 import { MultilingualEffects } from './app/shared/i18n/index';
 import { SampleModule } from './app/shared/sample/sample.module';
@@ -77,7 +76,6 @@ if (String('<%= BUILD_TYPE %>') === 'dev') {
       { provide: LogTarget, useFactory: (consoleLogTarget), deps: [ConsoleService], multi: true }
     ]),
     routerModule,
-    AnalyticsModule,
     MultilingualModule.forRoot([{
       provide: TranslateLoader,
       deps: [Http],

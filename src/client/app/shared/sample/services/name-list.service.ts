@@ -8,7 +8,6 @@ import { Observable } from 'rxjs/Observable';
 
 // app
 import { Config } from '../../core/index';
-import { Analytics, AnalyticsService } from '../../analytics/index';
 import { CATEGORY } from '../common/category.common';
 
 // module
@@ -16,14 +15,16 @@ import { ISampleState } from '../states/index';
 import * as actions from '../actions/name-list.action';
 
 @Injectable()
-export class NameListService extends Analytics {
+export class NameListService {
+
+  category?: string;
+  label?: string;
+  value?: number;
 
   constructor(
-    public analytics: AnalyticsService,
     private store: Store<ISampleState>,
     private http: Http
   ) {
-    super(analytics);
     this.category = CATEGORY;
   }
 

@@ -1,6 +1,3 @@
-// app
-import { ANALYTICS_PROVIDERS } from '../../../analytics/index';
-
 // module
 import { WindowService, ConsoleService, LogService, LogTarget, ConsoleTarget, LogLevel, RouterExtensions, AppService } from '../../index';
 
@@ -22,7 +19,6 @@ export function TEST_CORE_PROVIDERS(options?: any): Array<any> {
       multi: true
     },
     LogService,
-    ANALYTICS_PROVIDERS,
     { provide: RouterExtensions, useClass: RouterExtensionsMock },
     AppService
   ];

@@ -5,7 +5,6 @@ import './operators';
 import { Component, OnInit } from '@angular/core';
 
 // app
-import { AnalyticsService } from '../shared/analytics/index';
 import { Config, LogService, AppService } from '../shared/core/index';
 
 /**
@@ -18,7 +17,6 @@ import { Config, LogService, AppService } from '../shared/core/index';
 })
 export class AppComponent {
   constructor(
-    public analytics: AnalyticsService,
     public log: LogService,
     private appService: AppService
   ) {

@@ -30,7 +30,6 @@ import { ComponentsModule, cons, consoleLogTarget } from './components.module';
 
 // {N} custom app specific
 import { WindowNative, NSAppService } from './mobile/core/index';
-import { NS_ANALYTICS_PROVIDERS } from './mobile/analytics/index';
 
 /**
  * Config
@@ -67,7 +66,6 @@ MultilingualService.SUPPORTED_LANGUAGES = AppConfig.SUPPORTED_LANGUAGES;
     EffectsModule.run(NameListEffects)
   ],
   providers: [
-    NS_ANALYTICS_PROVIDERS,
     { provide: RouterExtensions, useClass: TNSRouterExtensions },
     { provide: AppService, useClass: NSAppService },
   ],

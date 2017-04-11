@@ -20,7 +20,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { AppService } from '../../../app/shared/core/services/app.service';
 import { Config } from '../../../app/shared/core/utils';
 import { LogService, WindowService, RouterExtensions } from '../../../app/shared/core/index';
-import { AnalyticsService } from '../../../app/shared/analytics/index';
 import { ActionBarUtil } from '../utils/actionbar.util';
 import * as multilingual from '../../../app/shared/i18n/index';
 
@@ -34,15 +33,14 @@ export class NSAppService extends AppService {
   // Remember to update iOS and android constructors if you change dependencies
   // @Inject decorator is used on injectables here since this component merely extends AppComponent
   // Since @Component decorator is not used here, this ensures metadata will be generated
-  constructor(public analytics: AnalyticsService,
-              public log: LogService,
+  constructor(public log: LogService,
               public store: Store<any>,
               public router: Router,
               public locationstrategy: NSLocationStrategy,
               public translate: TranslateService,
               public window: WindowService
   ) {
-    super(analytics, log);
+    super(log);
 
     this.log.debug('NSAppService constructor');
 

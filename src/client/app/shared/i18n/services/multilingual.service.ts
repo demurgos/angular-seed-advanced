@@ -6,7 +6,6 @@ import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 
 // app
-import { Analytics, AnalyticsService } from '../../analytics/index';
 import { ILang } from '../../core/index';
 import { WindowService } from '../../core/services/window.service';
 
@@ -17,7 +16,7 @@ import { ChangeAction } from '../actions/index';
 
 // service
 @Injectable()
-export class MultilingualService extends Analytics {
+export class MultilingualService {
 
   // default supported languages
   // see web.module.ts for example of how to provide different value
@@ -25,13 +24,15 @@ export class MultilingualService extends Analytics {
     { code: 'en', title: 'English' }
   ];
 
+  category?: string;
+  label?: string;
+  value?: number;
+
   constructor(
-    public analytics: AnalyticsService,
     private translate: TranslateService,
     private win: WindowService,
     private store: Store<IMultilingualState>
   ) {
-    super(analytics);
     this.category = CATEGORY;
 
     // this language will be used as a fallback when a translation isn't found in the current language
